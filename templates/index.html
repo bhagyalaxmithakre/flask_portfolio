@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Home · Bhagyalaxmi Thakre{% endblock %}
+{% block content %}
+<section class="hero">
+  <h2>Computer Science Engineer | Python / Django Developer</h2>
+  <p>Results-driven backend developer with experience building scalable applications, REST APIs, and data-driven systems.</p>
+  <p><a class="button" href="{{ url_for('projects') }}">See my projects</a></p>
+</section>
+
+<section>
+  <h3>Featured Projects</h3>
+  <div class="projects-grid">
+    {% for p in projects %}
+    <article class="card">
+      <img src="{{ url_for('static', filename=p.image) }}" alt="{{ p.title }}">
+      <h4><a href="{{ url_for('project_detail', slug=p.slug) }}">{{ p.title }}</a></h4>
+      <p>{{ p.summary }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

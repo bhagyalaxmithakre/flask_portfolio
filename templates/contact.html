@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Contact · Bhagyalaxmi{% endblock %}
+{% block content %}
+<h2>Contact Me</h2>
+<p>Want to reach out about a project or opportunity? Send a short message.</p>
+<form method="POST" class="contact-form">
+  <label>Name</label><br><input type="text" name="name" required><br>
+  <label>Email</label><br><input type="email" name="email" required><br>
+  <label>Message</label><br><textarea name="message" rows="6" required></textarea><br>
+  <button class="button" type="submit">Send Message</button>
+</form>
+{% endblock %}
